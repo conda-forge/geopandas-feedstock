@@ -73,6 +73,11 @@ Linux: [![Circle CI](https://circleci.com/gh/conda-forge/geopandas-feedstock.svg
 OSX: [![TravisCI](https://travis-ci.org/conda-forge/geopandas-feedstock.svg?branch=master)](https://travis-ci.org/conda-forge/geopandas-feedstock) 
 Windows: [![AppVeyor](https://ci.appveyor.com/api/projects/status/github/conda-forge/geopandas-feedstock?svg=True)](https://ci.appveyor.com/project/conda-forge/geopandas-feedstock/branch/master)
 
+Current release info
+====================
+Version: [![Anaconda-Server Badge](https://anaconda.org/conda-forge/geopandas/badges/version.svg)](https://anaconda.org/conda-forge/geopandas)
+Downloads: [![Anaconda-Server Badge](https://anaconda.org/conda-forge/geopandas/badges/downloads.svg)](https://anaconda.org/conda-forge/geopandas)
+
 
 Updating geopandas-feedstock
 ============================

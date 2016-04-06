@@ -10,7 +10,7 @@ source:
     md5: a01b5d3eb6bc097665a0ba297c39029f
 
 build:
-    number: 0
+    number: 1
     skip: True  # [py35 and win]
     script: python setup.py install --single-version-externally-managed --record record.txt
 
@@ -25,7 +25,7 @@ requirements:
         - pyproj
         - shapely
         - fiona
-        - gdal ==1.11.4  # We need to pin gdal until fiona works with gdal >2.
+        - gdal 1.11.4
         - six
         - rtree
         - descartes
