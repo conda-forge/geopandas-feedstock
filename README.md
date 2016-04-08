@@ -3,9 +3,9 @@ About geopandas
 
 Home: http://geopandas.org
 
-Package license: BSD
+Package license: BSD-3-clause
 
-Feedstock license: BSD
+Feedstock license: BSD 3-Clause
 
 Summary: Geographic pandas extensions
 
