@@ -1,4 +1,4 @@
-{% set version = "0.1.1" %}
+{% set version = "0.2" %}
 
 package:
     name: geopandas
@@ -7,10 +7,10 @@ package:
 source:
     fn: geopandas-{{ version }}.tar.gz
     url: https://pypi.python.org/packages/source/g/geopandas/geopandas-{{ version }}.tar.gz
-    md5: a01b5d3eb6bc097665a0ba297c39029f
+    md5: 47061076aa5e385b4ed773872397c86d
 
 build:
-    number: 2
+    number: 0
     script: python setup.py install --single-version-externally-managed --record record.txt
 
 requirements:
