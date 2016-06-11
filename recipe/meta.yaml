@@ -6,7 +6,7 @@ package:
 
 source:
     fn: geopandas-{{ version }}.tar.gz
-    url: https://pypi.python.org/packages/source/g/geopandas/geopandas-{{ version }}.tar.gz
+    url: https://pypi.io/packages/source/g/geopandas/geopandas-{{ version }}.tar.gz
     md5: 47061076aa5e385b4ed773872397c86d
 
 build:
