@@ -17,7 +17,6 @@ requirements:
     build:
         - python
         - setuptools
-        - cython
     run:
         - python
         - pandas
@@ -27,11 +26,11 @@ requirements:
         - gdal 2.1.*
         - six
         - rtree
-        - descartes
-        - matplotlib
-        - psycopg2  # [not win]
+        - descartes  # [not (win and py35)]
+        - matplotlib  # [not (win and py35)]
+        - psycopg2
         - sqlalchemy
-        - geopy ==1.10.0
+        - geopy 1.10.0
         - pysal
 
 test:
@@ -43,8 +42,6 @@ test:
         - test_data/test.dbf
         - test_data/test.shp
         - test_data/test.shx
-    commands:
-        - conda inspect linkages -n _test geopandas  # [not win]
 
 about:
     home: http://geopandas.org
