@@ -26,8 +26,8 @@ requirements:
     - gdal 2.1.*
     - six
     - rtree
-    - descartes  # [not (win and py35)]
-    - matplotlib  # [not (win and py35)]
+    - descartes
+    - matplotlib
     - psycopg2
     - sqlalchemy
     - pysal
