@@ -1,16 +1,15 @@
-{% set version = "0.2.1" %}
+{% set version = "0.3.0" %}
 
 package:
   name: geopandas
   version: {{ version }}
 
 source:
-  fn: geopandas-{{ version }}.tar.gz
-  url: https://github.com/geopandas/geopandas/archive/v{{ version }}.tar.gz
-  sha256: 1e1845acbf6cf8dd2850aec9bfaa92892e462887903e3ea1abb8111e88a41206
+  url: https://github.com/geopandas/geopandas/releases/download/v{{ version }}/geopandas-{{ version }}.tar.gz
+  sha256: e63bb32a3e516d8c9bcd149c22335575defdc5896c8bdf15c836608f152a920b
 
 build:
-  number: 4
+  number: 0
   script: python setup.py install --single-version-externally-managed --record record.txt
 
 requirements:
