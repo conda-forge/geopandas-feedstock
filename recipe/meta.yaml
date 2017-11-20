@@ -12,20 +12,24 @@ source:
 
 build:
   number: 0
-  script: 
-    - set GEOS_HEADERS=%CONDA_PREFIX%\\include  # [win]
-    - set GEOS_LIB=%CONDA_PREFIX%\\lib  # [win]
-    - python setup.py install --single-version-externally-managed --record record.txt --with-cython
+  script:
+    - python setup.py install --single-version-externally-managed --record record.txt --with-cython  # [not win]
 
 requirements:
   build:
     - python
     - setuptools
     - cython
-    - numpy
+    - msinttypes  # [win and py<35]
+    - numpy 1.8.*  # [not (win and (py35 or py36))]
+    - numpy 1.9.*  # [win and py35]
+    - numpy 1.11.*  # [win and py36]
     - shapely
   run:
     - python
+    - numpy >=1.8  # [not (win and (py35 or py36))]
+    - numpy >=1.9  # [win and py35]
+    - numpy >=1.11  # [win and py36]
     - pandas
     - pyproj
     - shapely
