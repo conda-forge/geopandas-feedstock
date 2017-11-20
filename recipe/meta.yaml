@@ -1,21 +1,22 @@
-{% set version = "0.3.0" %}
+{% set version = "1.0.0.dev" %}
 
 package:
   name: geopandas
   version: {{ version }}
 
 source:
-  url: https://github.com/geopandas/geopandas/releases/download/v{{ version }}/geopandas-{{ version }}.tar.gz
-  sha256: e63bb32a3e516d8c9bcd149c22335575defdc5896c8bdf15c836608f152a920b
+  url: https://github.com/geopandas/geopandas/archive/v{{ version }}.tar.gz
+  sha256: 8c4cf4eba18291ea84170c7321bcf2b1ce98361e4cc0ae0d9c6b8b25b9dc70dc
 
 build:
   number: 0
-  script: python setup.py install --single-version-externally-managed --record record.txt
+  script: python setup.py install --single-version-externally-managed --record record.txt --with-cython
 
 requirements:
   build:
     - python
     - setuptools
+    - cython
   run:
     - python
     - pandas
