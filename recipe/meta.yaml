@@ -5,8 +5,8 @@ package:
   version: {{ version }}
 
 source:
-  url: https://github.com/geopandas/geopandas/archive/v{{ version }}.tar.gz
-  sha256: 8c4cf4eba18291ea84170c7321bcf2b1ce98361e4cc0ae0d9c6b8b25b9dc70dc
+  git_url: https://github.com/geopandas/geopandas.git
+  git_branch: geopandas-cython
 
 build:
   number: 0
@@ -17,6 +17,8 @@ requirements:
     - python
     - setuptools
     - cython
+    - numpy
+    - shapely
   run:
     - python
     - pandas
