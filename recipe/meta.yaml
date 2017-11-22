@@ -7,8 +7,6 @@ package:
 source:
   git_url: https://github.com/geopandas/geopandas.git
   git_branch: geopandas-cython
-  patches:
-    - geos_header.patch
 
 build:
   number: 0
@@ -21,7 +19,6 @@ requirements:
     - python
     - setuptools
     - cython
-    - msinttypes  # [win and py<35]
     - numpy 1.8.*  # [not (win and (py35 or py36))]
     - numpy 1.9.*  # [win and py35]
     - numpy 1.11.*  # [win and py36]
