@@ -1,23 +1,33 @@
-{% set version = "0.3.0" %}
+{% set version = "1.0.0.dev" %}
 
 package:
   name: geopandas
   version: {{ version }}
 
 source:
-  url: https://github.com/geopandas/geopandas/releases/download/v{{ version }}/geopandas-{{ version }}.tar.gz
-  sha256: e63bb32a3e516d8c9bcd149c22335575defdc5896c8bdf15c836608f152a920b
+  git_url: https://github.com/geopandas/geopandas.git
+  git_branch: geopandas-cython
 
 build:
   number: 0
-  script: python setup.py install --single-version-externally-managed --record record.txt
+  skip: True  # [win and py<35]
+  script:
+    - python setup.py install --single-version-externally-managed --record record.txt --with-cython  # [not win]
 
 requirements:
   build:
     - python
     - setuptools
+    - cython
+    - numpy 1.8.*  # [not (win and (py35 or py36))]
+    - numpy 1.9.*  # [win and py35]
+    - numpy 1.11.*  # [win and py36]
+    - shapely
   run:
     - python
+    - numpy >=1.8  # [not (win and (py35 or py36))]
+    - numpy >=1.9  # [win and py35]
+    - numpy >=1.11  # [win and py36]
     - pandas
     - pyproj
     - shapely

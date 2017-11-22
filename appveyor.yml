@@ -10,14 +10,6 @@ environment:
 
   matrix:
     - TARGET_ARCH: x86
-      CONDA_PY: 27
-      CONDA_INSTALL_LOCN: C:\\Miniconda
-
-    - TARGET_ARCH: x64
-      CONDA_PY: 27
-      CONDA_INSTALL_LOCN: C:\\Miniconda-x64
-
-    - TARGET_ARCH: x86
       CONDA_PY: 35
       CONDA_INSTALL_LOCN: C:\\Miniconda35
 
@@ -71,4 +63,4 @@ build: off
 test_script:
     - conda build recipe --quiet
 deploy_script:
-    - cmd: upload_or_check_non_existence .\recipe conda-forge --channel=main
+    - cmd: upload_or_check_non_existence .\recipe conda-forge --channel=dev
