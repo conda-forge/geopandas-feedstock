@@ -35,10 +35,8 @@ test:
     - geopandas
     - geopandas.io
   files:
-    - test_data/test.cpg
-    - test_data/test.dbf
-    - test_data/test.shp
-    - test_data/test.shx
+    - test_data
+    - test_issue_31
 
 about:
   home: http://geopandas.org
