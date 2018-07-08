@@ -14,14 +14,15 @@ Summary: Geographic pandas extensions.
 Current build status
 ====================
 
-Linux: [![Circle CI](https://circleci.com/gh/conda-forge/geopandas-feedstock.svg?style=shield)](https://circleci.com/gh/conda-forge/geopandas-feedstock)
-OSX: [![TravisCI](https://travis-ci.org/conda-forge/geopandas-feedstock.svg?branch=master)](https://travis-ci.org/conda-forge/geopandas-feedstock)
-Windows: [![AppVeyor](https://ci.appveyor.com/api/projects/status/github/conda-forge/geopandas-feedstock?svg=True)](https://ci.appveyor.com/project/conda-forge/geopandas-feedstock/branch/master)
+All platforms:
+[![noarch](https://img.shields.io/circleci/project/github/conda-forge/geopandas-feedstock/master.svg?label=noarch)](https://circleci.com/gh/conda-forge/geopandas-feedstock)
 
 Current release info
 ====================
-Version: [![Anaconda-Server Badge](https://anaconda.org/conda-forge/geopandas/badges/version.svg)](https://anaconda.org/conda-forge/geopandas)
-Downloads: [![Anaconda-Server Badge](https://anaconda.org/conda-forge/geopandas/badges/downloads.svg)](https://anaconda.org/conda-forge/geopandas)
+
+| Name | Downloads | Version | Platforms |
+| --- | --- | --- | --- |
+| [![Conda Recipe](https://img.shields.io/badge/recipe-geopandas-green.svg)](https://anaconda.org/conda-forge/geopandas) | [![Conda Downloads](https://img.shields.io/conda/dn/conda-forge/geopandas.svg)](https://anaconda.org/conda-forge/geopandas) | [![Conda Version](https://img.shields.io/conda/vn/conda-forge/geopandas.svg)](https://anaconda.org/conda-forge/geopandas) | [![Conda Platforms](https://img.shields.io/conda/pn/conda-forge/geopandas.svg)](https://anaconda.org/conda-forge/geopandas) |
 
 Installing geopandas
 ====================
