@@ -1,4 +1,4 @@
-{% set version = "0.4.0" %}
+{% set version = "0.4.1" %}
 
 package:
   name: geopandas
@@ -9,7 +9,7 @@ source:
   sha256: 9f5d24d23f33e6d3267a633025e4d9e050b3a1e86d41a96d3ccc5ad95afec3db
 
 build:
-  number: 1
+  number: 0
   noarch: python
   script: "{{ PYTHON }} -m pip install . --no-deps --ignore-installed --no-cache-dir -vvv"
 
@@ -29,7 +29,7 @@ requirements:
     - matplotlib
     - psycopg2
     - sqlalchemy
-    - pysal
+    - mapclassify
 
 test:
   imports:
@@ -41,9 +41,6 @@ test:
 about:
   home: http://geopandas.org
   license: BSD 3-clause
-  # We can drop this when there is a next release and
-  # https://github.com/geopandas/geopandas/pull/795 is merged.
-  license_file: '{{ environ["RECIPE_DIR"] }}/LICENSE.txt'
   summary: 'Geographic pandas extensions'
 
 extra:
