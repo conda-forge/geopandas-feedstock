@@ -9,7 +9,7 @@ source:
   sha256: a59345c7ee9c4532101342bf31f5c576c32f901f16a5aaf0637c7e1f5ac8939c
 
 build:
-  number: 0
+  number: 1
   noarch: python
   script: "{{ PYTHON }} -m pip install . --no-deps -vv"
 
@@ -20,7 +20,7 @@ requirements:
   run:
     - python
     - pandas
-    - pyproj
+    - pyproj >=1.9,<2
     - shapely
     - fiona
     - six
