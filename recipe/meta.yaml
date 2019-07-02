@@ -9,7 +9,7 @@ source:
   sha256: d075d2ab61a502ab92ec6b72aaf9610a1340ec24ed07264fcbdbe944b9e68954
 
 build:
-  number: 2
+  number: 3
   noarch: python
   script: "{{ PYTHON }} -m pip install . --no-deps -vv"
 
@@ -20,18 +20,9 @@ requirements:
   run:
     - python
     - pandas
-    - pyproj
     - shapely
     - fiona
-    - six
-    - rtree
-    - descartes
-    - matplotlib-base
-    # We may want to re-add these two when the openssl migration is over and/or
-    # when conda-forge starts using the `strict` channel option.
-    # - psycopg2
-    # - sqlalchemy
-    - mapclassify
+    - pyproj
 
 test:
   imports:
@@ -42,7 +33,7 @@ test:
 
 about:
   home: http://geopandas.org
-  license: BSD 3-clause
+  license: BSD-3-Clause
   license_file: 'LICENSE.txt'
   summary: 'Geographic pandas extensions'
 
