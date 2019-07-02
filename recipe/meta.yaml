@@ -23,6 +23,7 @@ requirements:
     - shapely
     - fiona
     - pyproj
+    - rtree
 
 test:
   imports:
