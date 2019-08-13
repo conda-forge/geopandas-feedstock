@@ -1,59 +1,42 @@
-{% set version = "1.0.0.dev" %}
+{% set version = "0.6.0rc1" %}
 
 package:
   name: geopandas
   version: {{ version }}
 
 source:
-  git_url: https://github.com/geopandas/geopandas.git
-  git_branch: geopandas-cython
+  url: https://github.com/geopandas/geopandas/releases/download/v{{ version }}/geopandas-{{ version }}.tar.gz
+  sha256: de90ee835632345157ea4de80c0e77b0f39c94b8933079b05574d3280a3b9e89
 
 build:
-  number: 2
-  skip: True  # [win and py<35]
-  script:
-    - python setup.py install --single-version-externally-managed --record record.txt --with-cython  # [not win]
+  number: 0
+  noarch: python
+  script: "{{ PYTHON }} -m pip install . --no-deps -vv"
 
 requirements:
-  build:
+  host:
     - python
-    - setuptools
-    - cython
-    - numpy 1.8.*  # [not (win and (py35 or py36))]
-    - numpy 1.9.*  # [win and py35]
-    - numpy 1.11.*  # [win and py36]
-    - shapely
+    - pip
   run:
     - python
-    - numpy >=1.8  # [not (win and (py35 or py36))]
-    - numpy >=1.9  # [win and py35]
-    - numpy >=1.11  # [win and py36]
     - pandas
-    - pyproj
     - shapely
     - fiona
-    - six
+    - pyproj
     - rtree
-    - descartes
-    - matplotlib
-    - psycopg2
-    - sqlalchemy
-    - pysal
 
 test:
   imports:
     - geopandas
     - geopandas.io
   files:
-    - test_data/test.cpg
-    - test_data/test.dbf
-    - test_data/test.shp
-    - test_data/test.shx
+    - test_data
 
 about:
   home: http://geopandas.org
-  license: BSD 3-clause
-  summary: 'Geographic pandas extensions.'
+  license: BSD-3-Clause
+  license_file: 'LICENSE.txt'
+  summary: 'Geographic pandas extensions'
 
 extra:
   recipe-maintainers:
