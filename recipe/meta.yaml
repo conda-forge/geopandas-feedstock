@@ -22,7 +22,7 @@ requirements:
     - pandas >=0.23
     - shapely
     - fiona
-    - pyproj
+    - pyproj >=2.0.0
     - rtree
 
 test:
