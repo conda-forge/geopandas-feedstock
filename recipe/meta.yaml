@@ -1,4 +1,4 @@
-{% set version = "0.6.0rc1" %}
+{% set version = "0.7.0" %}
 
 package:
   name: geopandas
@@ -6,23 +6,23 @@ package:
 
 source:
   url: https://github.com/geopandas/geopandas/releases/download/v{{ version }}/geopandas-{{ version }}.tar.gz
-  sha256: de90ee835632345157ea4de80c0e77b0f39c94b8933079b05574d3280a3b9e89
+  sha256: 19074b090ab928527193c50b383d31a259a9b84b18553562631295fa67f640bc
 
 build:
-  number: 0
+  number: 1
   noarch: python
   script: "{{ PYTHON }} -m pip install . --no-deps -vv"
 
 requirements:
   host:
-    - python
+    - python >=3.5
     - pip
   run:
-    - python
-    - pandas
+    - python >=3.5
+    - pandas >=0.23
     - shapely
     - fiona
-    - pyproj
+    - pyproj >=2.2.0
     - rtree
 
 test:
