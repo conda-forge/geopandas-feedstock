@@ -5,7 +5,7 @@ Home: http://geopandas.org
 
 Package license: BSD-3-Clause
 
-Feedstock license: BSD 3-Clause
+Feedstock license: BSD-3-Clause
 
 Summary: Geographic pandas extensions
 
