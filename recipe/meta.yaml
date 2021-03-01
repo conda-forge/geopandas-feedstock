@@ -15,11 +15,11 @@ build:
 
 requirements:
   host:
-    - python >=3.5
+    - python >=3.6
     - pip
   run:
-    - python >=3.5
-    - pandas >=0.23
+    - python >=3.6
+    - pandas >=0.24
     - shapely
     - fiona
     - pyproj >=2.2.0
