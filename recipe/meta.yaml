@@ -1,4 +1,4 @@
-{% set version = "0.8.2" %}
+{% set version = "0.9.0" %}
 
 package:
   name: geopandas
@@ -6,20 +6,20 @@ package:
 
 source:
   url: https://github.com/geopandas/geopandas/releases/download/v{{ version }}/geopandas-{{ version }}.tar.gz
-  sha256: aa9ae82e4e6b52efa244bd4b8bd2363d66693e5592ad1a0f52b6afa8c36348cb
+  sha256: 63972ab4dc44c4029f340600dcb83264eb8132dd22b104da0b654bef7f42630a
 
 build:
   number: 0
   noarch: python
-  script: "{{ PYTHON }} -m pip install . --no-deps -vv"
+  script: {{ PYTHON }} -m pip install . --no-deps -vv
 
 requirements:
   host:
-    - python >=3.5
+    - python >=3.6
     - pip
   run:
-    - python >=3.5
-    - pandas >=0.23
+    - python >=3.6
+    - pandas >=0.24
     - shapely
     - fiona
     - pyproj >=2.2.0
@@ -35,8 +35,8 @@ test:
 about:
   home: http://geopandas.org
   license: BSD-3-Clause
-  license_file: 'LICENSE.txt'
-  summary: 'Geographic pandas extensions'
+  license_file: LICENSE.txt
+  summary: Geographic pandas extensions
 
 extra:
   recipe-maintainers:
