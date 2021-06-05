@@ -10,11 +10,11 @@ source:
 
 build:
   number: 1
+  noarch: python
 
 outputs:
   - name: geopandas-base
     build:
-      noarch: python
       script: {{ PYTHON }} -m pip install . --no-deps -vv
 
     requirements:
