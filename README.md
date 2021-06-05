@@ -1,5 +1,5 @@
-About geopandas
-===============
+About geopandas-suite
+=====================
 
 Home: http://geopandas.org
 
@@ -13,11 +13,44 @@ Current build status
 ====================
 
 
-<table><tr><td>All platforms:</td>
+<table>
+    
+  <tr>
+    <td>Azure</td>
     <td>
-      <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=3926&branchName=master">
-        <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/geopandas-feedstock?branchName=master">
-      </a>
+      <details>
+        <summary>
+          <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=3926&branchName=master">
+            <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/geopandas-feedstock?branchName=master">
+          </a>
+        </summary>
+        <table>
+          <thead><tr><th>Variant</th><th>Status</th></tr></thead>
+          <tbody><tr>
+              <td>linux_64</td>
+              <td>
+                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=3926&branchName=master">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/geopandas-feedstock?branchName=master&jobName=linux&configuration=linux_64_" alt="variant">
+                </a>
+              </td>
+            </tr><tr>
+              <td>osx_64</td>
+              <td>
+                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=3926&branchName=master">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/geopandas-feedstock?branchName=master&jobName=osx&configuration=osx_64_" alt="variant">
+                </a>
+              </td>
+            </tr><tr>
+              <td>win_64</td>
+              <td>
+                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=3926&branchName=master">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/geopandas-feedstock?branchName=master&jobName=win&configuration=win_64_" alt="variant">
+                </a>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </details>
     </td>
   </tr>
 </table>
@@ -28,20 +61,22 @@ Current release info
 | Name | Downloads | Version | Platforms |
 | --- | --- | --- | --- |
 | [![Conda Recipe](https://img.shields.io/badge/recipe-geopandas-green.svg)](https://anaconda.org/conda-forge/geopandas) | [![Conda Downloads](https://img.shields.io/conda/dn/conda-forge/geopandas.svg)](https://anaconda.org/conda-forge/geopandas) | [![Conda Version](https://img.shields.io/conda/vn/conda-forge/geopandas.svg)](https://anaconda.org/conda-forge/geopandas) | [![Conda Platforms](https://img.shields.io/conda/pn/conda-forge/geopandas.svg)](https://anaconda.org/conda-forge/geopandas) |
+| [![Conda Recipe](https://img.shields.io/badge/recipe-geopandas--base-green.svg)](https://anaconda.org/conda-forge/geopandas-base) | [![Conda Downloads](https://img.shields.io/conda/dn/conda-forge/geopandas-base.svg)](https://anaconda.org/conda-forge/geopandas-base) | [![Conda Version](https://img.shields.io/conda/vn/conda-forge/geopandas-base.svg)](https://anaconda.org/conda-forge/geopandas-base) | [![Conda Platforms](https://img.shields.io/conda/pn/conda-forge/geopandas-base.svg)](https://anaconda.org/conda-forge/geopandas-base) |
 
-Installing geopandas
-====================
+Installing geopandas-suite
+==========================
 
-Installing `geopandas` from the `conda-forge` channel can be achieved by adding `conda-forge` to your channels with:
+Installing `geopandas-suite` from the `conda-forge` channel can be achieved by adding `conda-forge` to your channels with:
 
 ```
 conda config --add channels conda-forge
+conda config --set channel_priority strict
 ```
 
-Once the `conda-forge` channel has been enabled, `geopandas` can be installed with:
+Once the `conda-forge` channel has been enabled, `geopandas, geopandas-base` can be installed with:
 
 ```
-conda install geopandas
+conda install geopandas geopandas-base
 ```
 
 It is possible to list all of the versions of `geopandas` available on your platform with:
@@ -89,17 +124,17 @@ Terminology
                   produce the finished article (built conda distributions)
 
 
-Updating geopandas-feedstock
-============================
+Updating geopandas-suite-feedstock
+==================================
 
-If you would like to improve the geopandas recipe or build a new
+If you would like to improve the geopandas-suite recipe or build a new
 package version, please fork this repository and submit a PR. Upon submission,
 your changes will be run on the appropriate platforms to give the reviewer an
 opportunity to confirm that the changes result in a successful build. Once
 merged, the recipe will be re-built and uploaded automatically to the
 `conda-forge` channel, whereupon the built conda packages will be available for
 everybody to install and use from the `conda-forge` channel.
-Note that all branches in the conda-forge/geopandas-feedstock are
+Note that all branches in the conda-forge/geopandas-suite-feedstock are
 immediately built and any created packages are uploaded, so PRs should be based
 on branches in forks and branches in the main repository should only be used to
 build distinct package versions.
