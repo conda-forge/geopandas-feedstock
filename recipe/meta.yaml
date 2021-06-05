@@ -14,8 +14,7 @@ build:
 
 outputs:
   - name: geopandas-base
-    build:
-      script: {{ PYTHON }} -m pip install . --no-deps -vv
+    script: {{ PYTHON }} -m pip install . --no-deps -vv
 
     requirements:
       host:
