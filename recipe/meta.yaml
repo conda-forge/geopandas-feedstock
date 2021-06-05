@@ -1,7 +1,7 @@
 {% set version = "0.9.0" %}
 
 package:
-  name: geopandas-suite
+  name: geopandas
   version: {{ version }}
 
 source:
@@ -9,14 +9,14 @@ source:
   sha256: 63972ab4dc44c4029f340600dcb83264eb8132dd22b104da0b654bef7f42630a
 
 build:
-  noarch: python
   number: 1
   noarch: python
 
 outputs:
   - name: geopandas-base
-    script: {{ PYTHON }} -m pip install . --no-deps -vv
-
+    script: build_base.sh
+    build:
+      noarch: python
     requirements:
       host:
         - python >=3.6
