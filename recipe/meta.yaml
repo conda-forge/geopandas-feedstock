@@ -9,28 +9,49 @@ source:
   sha256: 63972ab4dc44c4029f340600dcb83264eb8132dd22b104da0b654bef7f42630a
 
 build:
-  number: 0
+  number: 1
   noarch: python
-  script: {{ PYTHON }} -m pip install . --no-deps -vv
 
-requirements:
-  host:
-    - python >=3.6
-    - pip
-  run:
-    - python >=3.6
-    - pandas >=0.24
-    - shapely
-    - fiona
-    - pyproj >=2.2.0
-    - rtree
+outputs:
+  - name: geopandas-base
+    script: build_base.sh
+    build:
+      noarch: python
+    requirements:
+      host:
+        - python >=3.6
+        - pip
+      run:
+        - python >=3.6
+        - pandas >=0.24
+        - shapely
+        - pyproj >=2.2.0
 
-test:
-  imports:
-    - geopandas
-    - geopandas.io
-  files:
-    - test_data
+    test:
+      imports:
+        - geopandas
+        - geopandas.io
+      files:
+        - test_data
+
+  - name: geopandas
+    requirements:
+      host:
+        - python >=3.6
+      run:
+        - python >=3.6
+        - {{ pin_subpackage('geopandas-base', exact=True) }}
+        - fiona
+        - rtree
+        - matplotlib-base
+        - mapclassify >=2.2.0
+
+    test:
+      imports:
+        - geopandas
+        - geopandas.io
+      files:
+        - test_data
 
 about:
   home: http://geopandas.org

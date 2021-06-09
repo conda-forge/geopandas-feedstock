@@ -28,6 +28,7 @@ Current release info
 | Name | Downloads | Version | Platforms |
 | --- | --- | --- | --- |
 | [![Conda Recipe](https://img.shields.io/badge/recipe-geopandas-green.svg)](https://anaconda.org/conda-forge/geopandas) | [![Conda Downloads](https://img.shields.io/conda/dn/conda-forge/geopandas.svg)](https://anaconda.org/conda-forge/geopandas) | [![Conda Version](https://img.shields.io/conda/vn/conda-forge/geopandas.svg)](https://anaconda.org/conda-forge/geopandas) | [![Conda Platforms](https://img.shields.io/conda/pn/conda-forge/geopandas.svg)](https://anaconda.org/conda-forge/geopandas) |
+| [![Conda Recipe](https://img.shields.io/badge/recipe-geopandas--base-green.svg)](https://anaconda.org/conda-forge/geopandas-base) | [![Conda Downloads](https://img.shields.io/conda/dn/conda-forge/geopandas-base.svg)](https://anaconda.org/conda-forge/geopandas-base) | [![Conda Version](https://img.shields.io/conda/vn/conda-forge/geopandas-base.svg)](https://anaconda.org/conda-forge/geopandas-base) | [![Conda Platforms](https://img.shields.io/conda/pn/conda-forge/geopandas-base.svg)](https://anaconda.org/conda-forge/geopandas-base) |
 
 Installing geopandas
 ====================
@@ -36,12 +37,13 @@ Installing `geopandas` from the `conda-forge` channel can be achieved by adding 
 
 ```
 conda config --add channels conda-forge
+conda config --set channel_priority strict
 ```
 
-Once the `conda-forge` channel has been enabled, `geopandas` can be installed with:
+Once the `conda-forge` channel has been enabled, `geopandas, geopandas-base` can be installed with:
 
 ```
-conda install geopandas
+conda install geopandas geopandas-base
 ```
 
 It is possible to list all of the versions of `geopandas` available on your platform with:
