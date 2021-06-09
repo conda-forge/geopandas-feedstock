@@ -44,6 +44,7 @@ outputs:
         - fiona
         - rtree
         - matplotlib-base
+        - mapclassify >=2.2.0
 
     test:
       imports:
