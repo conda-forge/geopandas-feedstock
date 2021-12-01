@@ -9,7 +9,7 @@ source:
   sha256: efbf47e70732e25c3727222019c92b39b2e0a66ebe4fe379fbe1aa43a2a871db
 
 build:
-  number: 0
+  number: 1
   noarch: python
 
 outputs:
