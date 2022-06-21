@@ -1,4 +1,4 @@
-{% set version = "0.10.2" %}
+{% set version = "0.11.0" %}
 
 package:
   name: geopandas
@@ -6,10 +6,10 @@ package:
 
 source:
   url: https://github.com/geopandas/geopandas/releases/download/v{{ version }}/geopandas-{{ version }}.tar.gz
-  sha256: efbf47e70732e25c3727222019c92b39b2e0a66ebe4fe379fbe1aa43a2a871db
+  sha256: 562fe7dc19a6e0f61532d654c4752f7bf46e0714990c5844fe3de3f9c99cb873
 
 build:
-  number: 1
+  number: 0
   noarch: python
 
 outputs:
@@ -22,13 +22,14 @@ outputs:
         - python                                 # [build_platform != target_platform]
         - cross-python_{{ target_platform }}     # [build_platform != target_platform]
       host:
-        - python >=3.7
+        - python >=3.8
         - pip
       run:
-        - python >=3.7
-        - pandas >=0.25
-        - shapely
-        - pyproj >=2.2.0
+        - python >=3.8
+        - pandas >=1.0.5
+        - shapely >=1.7, <2
+        - pyproj >=2.6.1.post1
+        - packaging
 
     test:
       imports:
@@ -40,9 +41,9 @@ outputs:
   - name: geopandas
     requirements:
       host:
-        - python >=3.7
+        - python >=3.8
       run:
-        - python >=3.7
+        - python >=3.8
         - {{ pin_subpackage('geopandas-base', exact=True) }}
         - fiona
         - rtree
@@ -70,4 +71,3 @@ extra:
     - jorisvandenbossche
     - jdmcbr
     - martinfleis
-
