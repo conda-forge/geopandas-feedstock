@@ -22,13 +22,14 @@ outputs:
         - python                                 # [build_platform != target_platform]
         - cross-python_{{ target_platform }}     # [build_platform != target_platform]
       host:
-        - python >=3.7
+        - python >=3.8
         - pip
       run:
-        - python >=3.7
-        - pandas >=0.25
-        - shapely
-        - pyproj >=2.2.0
+        - python >=3.8
+        - pandas >=1.0.5
+        - shapely >=1.7, <2
+        - pyproj >=2.6.1.post1
+        - packaging
 
     test:
       imports:
@@ -40,9 +41,9 @@ outputs:
   - name: geopandas
     requirements:
       host:
-        - python >=3.7
+        - python >=3.8
       run:
-        - python >=3.7
+        - python >=3.8
         - {{ pin_subpackage('geopandas-base', exact=True) }}
         - fiona
         - rtree
