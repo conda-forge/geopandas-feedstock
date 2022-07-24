@@ -146,5 +146,6 @@ Feedstock Maintainers
 
 * [@jdmcbr](https://github.com/jdmcbr/)
 * [@jorisvandenbossche](https://github.com/jorisvandenbossche/)
+* [@martinfleis](https://github.com/martinfleis/)
 * [@ocefpaf](https://github.com/ocefpaf/)
 
