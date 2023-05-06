@@ -1,11 +1,11 @@
-About geopandas
-===============
+About geopandas-feedstock
+=========================
+
+Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/geopandas-feedstock/blob/main/LICENSE.txt)
 
 Home: http://geopandas.org
 
 Package license: BSD-3-Clause
-
-Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/geopandas-feedstock/blob/main/LICENSE.txt)
 
 Summary: Geographic pandas extensions
 
