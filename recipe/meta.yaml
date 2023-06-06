@@ -9,7 +9,7 @@ source:
   sha256: e5b56d9c20800c77bcc0c914db3f27447a37b23b2cd892be543f5001a694a968
 
 build:
-  number: 0
+  number: 1
   noarch: python
 
 outputs:
@@ -45,7 +45,7 @@ outputs:
       run:
         - python >=3.8
         - {{ pin_subpackage('geopandas-base', exact=True) }}
-        - fiona
+        - fiona >=1.8.19
         - rtree
         - matplotlib-base
         - mapclassify >=2.4.0
