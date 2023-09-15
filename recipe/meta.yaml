@@ -1,4 +1,4 @@
-{% set version = "0.13.2" %}
+{% set version = "0.14.0" %}
 
 package:
   name: geopandas
@@ -6,10 +6,10 @@ package:
 
 source:
   url: https://github.com/geopandas/geopandas/releases/download/v{{ version }}/geopandas-{{ version }}.tar.gz
-  sha256: e5b56d9c20800c77bcc0c914db3f27447a37b23b2cd892be543f5001a694a968
+  sha256: ea6c031889e1e1888aecaa6e182ca620d78f63551c49b3002a998bcbb280531f
 
 build:
-  number: 1
+  number: 0
   noarch: python
 
 outputs:
