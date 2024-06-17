@@ -1,4 +1,4 @@
-{% set version = "0.14.4" %}
+{% set version = "1.0.0rc1" %}
 
 package:
   name: geopandas
@@ -6,7 +6,7 @@ package:
 
 source:
   url: https://github.com/geopandas/geopandas/releases/download/v{{ version }}/geopandas-{{ version }}.tar.gz
-  sha256: 56765be9d58e2c743078085db3bd07dc6be7719f0dbe1dfdc1d705cb80be7c25
+  sha256: b5308067dc92c0762931dc2c1d7f9be1e33f78def5af3865a263a0d2c1eca09d
 
 build:
   number: 0
@@ -26,9 +26,9 @@ outputs:
         - pip
       run:
         - python >=3.9
+        - numpy >= 1.22
         - pandas >=1.4.0
-        - shapely >=1.8.0
-        - pyproj >=3.3.0
+        - shapely >=2.0.0
         - packaging
 
     test:
@@ -45,8 +45,8 @@ outputs:
       run:
         - python >=3.9
         - {{ pin_subpackage('geopandas-base', exact=True) }}
-        - fiona >=1.8.21
-        - rtree
+        - pyproj >=3.3.0
+        - pyogrio >=0.7.2
         - matplotlib-base
         - mapclassify >=2.4.0
         - folium
