@@ -1,45 +1,73 @@
-{% set version = "0.8.0.dev" %}
+{% set version = "0.14.4" %}
 
 package:
   name: geopandas
   version: {{ version }}
 
 source:
-  git_url: https://github.com/geopandas/geopandas.git
-  git_branch: master
+  url: https://github.com/geopandas/geopandas/releases/download/v{{ version }}/geopandas-{{ version }}.tar.gz
+  sha256: 56765be9d58e2c743078085db3bd07dc6be7719f0dbe1dfdc1d705cb80be7c25
 
 build:
   number: 0
   noarch: python
-  script: "{{ PYTHON }} -m pip install . --no-deps -vv"
 
-requirements:
-  host:
-    - python >=3.5
-    - pip
-  run:
-    - python >=3.5
-    - pandas >=0.23
-    - shapely
-    - fiona
-    - pyproj >=2.2.0
-    - rtree
+outputs:
+  - name: geopandas-base
+    script: build_base.sh
+    build:
+      noarch: python
+    requirements:
+      build:
+        - python                                 # [build_platform != target_platform]
+        - cross-python_{{ target_platform }}     # [build_platform != target_platform]
+      host:
+        - python >=3.9
+        - pip
+      run:
+        - python >=3.9
+        - pandas >=1.4.0
+        - shapely >=1.8.0
+        - pyproj >=3.3.0
+        - packaging
 
-test:
-  imports:
-    - geopandas
-    - geopandas.io
-  files:
-    - test_data
+    test:
+      imports:
+        - geopandas
+        - geopandas.io
+      files:
+        - test_data
+
+  - name: geopandas
+    requirements:
+      host:
+        - python >=3.9
+      run:
+        - python >=3.9
+        - {{ pin_subpackage('geopandas-base', exact=True) }}
+        - fiona >=1.8.21
+        - rtree
+        - matplotlib-base
+        - mapclassify >=2.4.0
+        - folium
+        - xyzservices
+
+    test:
+      imports:
+        - geopandas
+        - geopandas.io
+      files:
+        - test_data
 
 about:
   home: http://geopandas.org
   license: BSD-3-Clause
-  license_file: 'LICENSE.txt'
-  summary: 'Geographic pandas extensions'
+  license_file: LICENSE.txt
+  summary: Geographic pandas extensions
 
 extra:
   recipe-maintainers:
     - ocefpaf
     - jorisvandenbossche
     - jdmcbr
+    - martinfleis
