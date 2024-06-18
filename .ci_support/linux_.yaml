@@ -1,6 +1,0 @@
-channel_sources:
-- conda-forge,defaults
-channel_targets:
-- conda-forge geopandas_dev
-docker_image:
-- condaforge/linux-anvil-comp7
