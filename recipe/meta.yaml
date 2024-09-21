@@ -23,6 +23,7 @@ outputs:
         - cross-python_{{ target_platform }}     # [build_platform != target_platform]
       host:
         - python >=3.9
+        - setuptools
         - pip
       run:
         - python >=3.9
