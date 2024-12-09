@@ -9,7 +9,7 @@ source:
   sha256: b8bf70a5534588205b7a56646e2082fb1de9a03599651b3d80c99ea4c2ca08ab
 
 build:
-  number: 1
+  number: 2
   noarch: python
 
 outputs:
@@ -22,17 +22,19 @@ outputs:
         - python                                 # [build_platform != target_platform]
         - cross-python_{{ target_platform }}     # [build_platform != target_platform]
       host:
-        - python >=3.9
+        - python {{ python_min }}
         - setuptools
         - pip
       run:
-        - python >=3.9
+        - python >={{ python_min }}
         - numpy >=1.22
         - pandas >=1.4.0
         - shapely >=2.0.0
         - packaging
 
     test:
+      requires:
+        - python {{ python_min }}
       imports:
         - geopandas
         - geopandas.io
@@ -42,9 +44,9 @@ outputs:
   - name: geopandas
     requirements:
       host:
-        - python >=3.9
+        - python {{ python_min }}
       run:
-        - python >=3.9
+        - python >={{ python_min }}
         - {{ pin_subpackage('geopandas-base', exact=True) }}
         - pyproj >=3.3.0
         - pyogrio >=0.7.2
@@ -54,6 +56,8 @@ outputs:
         - xyzservices
 
     test:
+      requires:
+        - python {{ python_min }}
       imports:
         - geopandas
         - geopandas.io
