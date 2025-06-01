@@ -1,4 +1,5 @@
 {% set version = "1.1.0" %}
+{% set python_min = "3.10" %}
 
 package:
   name: geopandas
@@ -27,8 +28,8 @@ outputs:
         - pip
       run:
         - python >={{ python_min }}
-        - numpy >=1.22
-        - pandas >=1.4.0
+        - numpy >=1.24
+        - pandas >=2.0.0
         - shapely >=2.0.0
         - packaging
 
@@ -48,10 +49,10 @@ outputs:
       run:
         - python >={{ python_min }}
         - {{ pin_subpackage('geopandas-base', exact=True) }}
-        - pyproj >=3.3.0
+        - pyproj >=3.5.0
         - pyogrio >=0.7.2
         - matplotlib-base
-        - mapclassify >=2.4.0
+        - mapclassify >=2.5.0
         - folium
         - xyzservices
 
