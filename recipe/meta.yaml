@@ -1,4 +1,4 @@
-{% set version = "1.1.4" %}
+{% set version = "1.2.0" %}
 
 package:
   name: geopandas
@@ -6,7 +6,7 @@ package:
 
 source:
   url: https://github.com/geopandas/geopandas/releases/download/v{{ version }}/geopandas-{{ version }}.tar.gz
-  sha256: 06f2890a07e1a239047daa14b486a7c6ae5ce82dcf7405e13c46bf31f5d0dd66
+  sha256: 72425b0dec1b77122b1e00f72c2b3b91f320cf0331ae236d37e26865e8808628
   patches:
     # pyproj and pyogrio are intentionally excluded from geopandas-base, as they
     # are large and not strictly required
@@ -27,13 +27,14 @@ outputs:
         - cross-python_{{ target_platform }}     # [build_platform != target_platform]
       host:
         - python {{ python_min }}
-        - setuptools
+        - hatchling >=1.5
+        - hatch-vcs
         - pip
       run:
         - python >={{ python_min }}
-        - numpy >=1.24
-        - pandas >=2.0.0
-        - shapely >=2.0.0
+        - numpy >=2
+        - pandas >=2.2.0
+        - shapely >=2.1.0
         - packaging
         # pyproj and pyogrio are intentionally moved to geopandas, as they
         # are large and not strictly required
@@ -57,10 +58,10 @@ outputs:
       run:
         - python >={{ python_min }}
         - {{ pin_subpackage('geopandas-base', exact=True) }}
-        - pyproj >=3.5.0
-        - pyogrio >=0.7.2
+        - pyproj >=3.7.0
+        - pyogrio >=0.8.0
         - matplotlib-base
-        - mapclassify >=2.5.0
+        - mapclassify >=2.7.0
         - folium
         - xyzservices
 
