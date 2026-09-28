@@ -1,4 +1,4 @@
-{% set version = "1.1.4" %}
+{% set version = "1.2.0" %}
 
 package:
   name: geopandas
@@ -6,7 +6,7 @@ package:
 
 source:
   url: https://github.com/geopandas/geopandas/releases/download/v{{ version }}/geopandas-{{ version }}.tar.gz
-  sha256: 06f2890a07e1a239047daa14b486a7c6ae5ce82dcf7405e13c46bf31f5d0dd66
+  sha256: 72425b0dec1b77122b1e00f72c2b3b91f320cf0331ae236d37e26865e8808628
   patches:
     # pyproj and pyogrio are intentionally excluded from geopandas-base, as they
     # are large and not strictly required
