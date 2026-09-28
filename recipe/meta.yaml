@@ -31,9 +31,9 @@ outputs:
         - pip
       run:
         - python >={{ python_min }}
-        - numpy >=1.24
-        - pandas >=2.0.0
-        - shapely >=2.0.0
+        - numpy >=2
+        - pandas >=2.2.0
+        - shapely >=2.1.0
         - packaging
         # pyproj and pyogrio are intentionally moved to geopandas, as they
         # are large and not strictly required
@@ -57,10 +57,10 @@ outputs:
       run:
         - python >={{ python_min }}
         - {{ pin_subpackage('geopandas-base', exact=True) }}
-        - pyproj >=3.5.0
-        - pyogrio >=0.7.2
+        - pyproj >=3.7.0
+        - pyogrio >=0.8.0
         - matplotlib-base
-        - mapclassify >=2.5.0
+        - mapclassify >=2.7.0
         - folium
         - xyzservices
 
